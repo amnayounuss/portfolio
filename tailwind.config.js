@@ -27,8 +27,9 @@ module.exports = {
       colors: {
         primary: '#1E1D2B', 
         accent: {
-          DEFAULT: '#8E60F3',
-          hover: '#8841C5',
+          DEFAULT: '#8841C5',
+          hover: '#8E60F3',
+          
         }
 
       },
