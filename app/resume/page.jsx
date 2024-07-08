@@ -2,7 +2,7 @@
 import React from 'react'
 
 import { FaHtml5, FaCss3, FaJs, FaBootstrap, FaNodeJs, FaWordpress } from "react-icons/fa";
-import { SiNextdotjs, SiTypescript, SiTailwindcss, SiMui } from "react-icons/si";
+import { SiNextdotjs, SiTypescript, SiTailwindcss, SiMui, SiShadcnui, SiReact } from "react-icons/si";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -120,6 +120,10 @@ const skills = {
       name: "html 5",
     },
     {
+      icon: <SiReact />,
+      name: "html 5",
+    },
+    {
       icon: <SiTypescript />,
       name: "html 5",
     },
@@ -133,6 +137,10 @@ const skills = {
     },
     {
       icon: <SiMui />,
+      name: "html 5",
+    },
+    {
+      icon: <SiShadcnui />,
       name: "html 5",
     },
     {
