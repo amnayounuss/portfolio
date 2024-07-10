@@ -101,51 +101,51 @@ const skills = {
   skillList: [
     {
       icon: <FaHtml5 />,
-      name: "html 5",
+      name: "Html 5",
     },
     {
       icon: <FaCss3 />,
-      name: "html 5",
+      name: "CSS 3",
     },
     {
       icon: <FaJs />,
-      name: "html 5",
+      name: "JavaScript",
     },
     {
       icon: <FaBootstrap />,
-      name: "html 5",
+      name: "Bootstrap",
     },
     {
       icon: <FaNodeJs />,
-      name: "html 5",
+      name: "Node.js",
     },
     {
       icon: <SiReact />,
-      name: "html 5",
+      name: "React.js",
     },
     {
       icon: <SiTypescript />,
-      name: "html 5",
+      name: "Typescript",
     },
     {
       icon: <SiTailwindcss />,
-      name: "html 5",
+      name: "TailwindCSS",
     },
     {
       icon: <SiNextdotjs />,
-      name: "html 5",
+      name: "Next.js",
     },
     {
       icon: <SiMui />,
-      name: "html 5",
+      name: "Material UI",
     },
     {
       icon: <SiShadcnui />,
-      name: "html 5",
+      name: "Shadcn",
     },
     {
       icon: <FaWordpress />,
-      name: "html 5",
+      name: "WordPress",
     }
   ]
 }
