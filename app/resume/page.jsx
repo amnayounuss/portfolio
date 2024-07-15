@@ -55,18 +55,18 @@ const experience = {
   items: [
     {
       company: "Crystallite Pakistan Pvt Ltd.",
-      position: "Frontend Developer",
-      duration: "2020-2024"
+      position: "Frontend Developement Internee",
+      duration: "Nov 2023 - Feb 2024"
     },
     {
-      company: "XYZ",
-      position: "Frontend Developer",
-      duration: "2020-2024"
+      company: "Team 360",
+      position: "WordPress Developer",
+      duration: "Feb 2023 - Oct 2023"
     },
     {
-      company: "XYZ",
-      position: "Frontend Developer",
-      duration: "2020-2024"
+      company: "Freelancer",
+      position: "Web Developer",
+      duration: "2023 - Present"
     }
   ]
 }
@@ -78,19 +78,19 @@ const education = {
   description: "Cillum proident consectetur eu reprehenderit nulla non eiusmod magna occaecat eiusmod dolore.",
   items: [
     {
-      institution: "MAJU",
+      institution: "Muhammad Ali Jinnah University",
       degree: "Software Engineer",
-      duration: "2020-2024"
+      duration: "2017-2022"
     },
     {
-      institution: "kAJU",
-      degree: "Software Engineer",
-      duration: "2020-2024"
+      institution: "SSPE",
+      degree: "Full Stack Website Development course",
+      duration: "2022-2023"
     },
     {
-      institution: "MAJU",
-      degree: "Software Engineer",
-      duration: "2020-2024"
+      institution: "SSPE",
+      degree: "WordPress Development course",
+      duration: "2023"
     }
   ]
 }
@@ -112,29 +112,31 @@ const skills = {
       name: "JavaScript",
     },
     {
-      icon: <FaBootstrap />,
-      name: "Bootstrap",
+      icon: <SiTailwindcss />,
+      name: "TailwindCSS",
     },
     {
-      icon: <FaNodeJs />,
-      name: "Node.js",
+      icon: <FaBootstrap />,
+      name: "Bootstrap",
     },
     {
       icon: <SiReact />,
       name: "React.js",
     },
     {
-      icon: <SiTypescript />,
-      name: "Typescript",
-    },
-    {
-      icon: <SiTailwindcss />,
-      name: "TailwindCSS",
-    },
-    {
       icon: <SiNextdotjs />,
       name: "Next.js",
     },
+    {
+      icon: <FaNodeJs />,
+      name: "Node.js",
+    },
+
+    {
+      icon: <SiTypescript />,
+      name: "Typescript",
+    },
+
     {
       icon: <SiMui />,
       name: "Material UI",
@@ -168,10 +170,10 @@ const Resume = () => {
           className="flex flex-col xl:flex-row gap-[60px]"
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+            <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="skills">Skills</TabsTrigger>
-            <TabsTrigger value="about">About me</TabsTrigger>
+            {/* <TabsTrigger value="about">About me</TabsTrigger> */}
           </TabsList>
 
           <div className="min-h-[70vh] w-full">
@@ -256,13 +258,13 @@ const Resume = () => {
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text=4xl font-bold">{about.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                {about.description}
+                  {about.description}
                 </p>
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px]">
-                  {about.info.map((item,index)=>{
-                    return(
+                  {about.info.map((item, index) => {
+                    return (
                       <li key={index}
-                      className="flex items-center justify-center xl:justify-start gap-4">
+                        className="flex items-center justify-center xl:justify-start gap-4">
                         <span className="text-white/60">{item.fieldName}</span>
                         <span className="text-xl">{item.fieldValue}</span>
                       </li>
