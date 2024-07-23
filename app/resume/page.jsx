@@ -81,16 +81,6 @@ const education = {
       institution: "Muhammad Ali Jinnah University",
       degree: "Software Engineer",
       duration: "2017-2022"
-    },
-    {
-      institution: "SSPE",
-      degree: "Full Stack Website Development course",
-      duration: "2022-2023"
-    },
-    {
-      institution: "SSPE",
-      degree: "WordPress Development course",
-      duration: "2023"
     }
   ]
 }
@@ -222,8 +212,8 @@ const Resume = () => {
                 </ScrollArea>
               </div>
             </TabsContent>
-            <TabsContent value="skills" className="w-full h-full" >
-              <div className="flex flex-col gap-[30px]">
+            <TabsContent value="skills" className="w-full h-full mb-14" >
+              <div className="flex flex-col gap-[30px] ">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{skills.title}</h3>
                   {/* <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{skills.description}</p> */}

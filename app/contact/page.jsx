@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaMapMarkedAlt } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import emailjs from 'emailjs-com'; // Import EmailJS
 
 const info = [
   {
@@ -18,7 +18,7 @@ const info = [
     title: "Address",
     description: "Karachi, Pakistan"
   }
-]
+];
 
 const Contact = () => {
   const [showMessage, setShowMessage] = useState(false);
@@ -43,12 +43,15 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Check if all required fields are filled and phone number format is correct
     if (formData.firstname && formData.lastname && formData.email && isValidPhoneNumber(formData.phone) && formData.message) {
-      // Perform form submission logic here
-      toggleMessage(); // Show success message
+      emailjs.send('service_b3fxnrt', 'template_z59vojk', formData, 'FJZMX8rzDNHVuPS9Q')
+        .then((response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          toggleMessage(); 
+        }, (error) => {
+          console.log('FAILED...', error);
+        });
     } else {
-      // Set errors for fields that are not filled or invalid
       const errors = {};
       Object.keys(formData).forEach(key => {
         if (!formData[key]) {
@@ -70,7 +73,6 @@ const Contact = () => {
       ...formData,
       [name]: value
     });
-    // Clear error for the field on input change
     setFormErrors({
       ...formErrors,
       [name]: false
@@ -78,7 +80,6 @@ const Contact = () => {
   };
 
   const isValidPhoneNumber = (phone) => {
-    // Regex to allow only numbers and special characters in phone number
     const phoneRegex = /^[0-9\-\+\(\) ]+$/;
     return phoneRegex.test(phone);
   };
