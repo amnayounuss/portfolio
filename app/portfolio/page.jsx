@@ -91,9 +91,9 @@ const Portfolio = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-2">
-                <div className="text-4xl leading-none font-extrabold text-white text-outline">
+                {/* <div className="text-4xl leading-none font-extrabold text-white text-outline">
                   {project.num}
-                </div>
+                </div> */}
                 <h2 className="text-2xl font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
                   {project.category} project
                 </h2>
