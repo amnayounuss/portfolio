@@ -22,7 +22,7 @@ const projects = [
       { "name": "Select2" },
       { "name": "AOS" }
     ],
-    "image": "/assets/work/vehicles-audit.png",
+    "image": "/assets/work/vehicles-audit.jpg",
     "live": "https://vehiclesaudit.com/",
     "github": ""
   },
@@ -34,7 +34,7 @@ const projects = [
       { "name": "React.js" },
       { "name": "TailwindCSS" }
     ],
-    "image": "/assets/work/ecube.png",
+    "image": "/assets/work/ecube.jpg",
     "live": "https://ecube1.netlify.app/",
     "github": ""
   },
@@ -47,7 +47,7 @@ const projects = [
       { "name": "WhatsApp Integration" },
       { "name": "WooCommerce" }
     ],
-    "image": "/assets/work/engepapa.png",
+    "image": "/assets/work/engepapa.jpg",
     "live": "https://engepapa.net/",
     "github": ""
   },
@@ -63,7 +63,7 @@ const projects = [
       { "name": "Contact Form 7" },
       { "name": "WooCommerce" }
     ],
-    "image": "/assets/work/icon-sourcing.png",
+    "image": "/assets/work/icon-sourcing.jpg",
     "live": "https://iconsourcing.com/",
     "github": ""
   },
@@ -81,7 +81,7 @@ const projects = [
       { "name": "Shadcn" },
       { "name": "TailwindCSS" }
     ],
-    "image": "/assets/work/desi-dhaba.png",
+    "image": "/assets/work/desi-dhaba.jpg",
     "live": "https://desi-dhaba.vercel.app/?category=all",
     "github": ""
   },
@@ -96,7 +96,7 @@ const projects = [
       { "name": "Tawk" },
       { "name": "EmailJs" }
     ],
-    "image": "/assets/work/flikrinnovation.png",
+    "image": "/assets/work/flikrinnovation.jpg",
     "live": "https://flikrinnovation.com/#/",
     "github": ""
   }
