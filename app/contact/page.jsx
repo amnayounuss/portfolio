@@ -6,6 +6,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com'; // Import EmailJS
+import { toast, ToastContainer } from 'react-toastify'; // Import Toastify
+import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
 
 const info = [
   {
@@ -21,7 +23,6 @@ const info = [
 ];
 
 const Contact = () => {
-  const [showMessage, setShowMessage] = useState(false);
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
@@ -37,19 +38,16 @@ const Contact = () => {
     message: false
   });
 
-  const toggleMessage = () => {
-    setShowMessage(!showMessage);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.firstname && formData.lastname && formData.email && isValidPhoneNumber(formData.phone) && formData.message) {
       emailjs.send('service_b3fxnrt', 'template_z59vojk', formData, 'FJZMX8rzDNHVuPS9Q')
         .then((response) => {
           console.log('SUCCESS!', response.status, response.text);
-          toggleMessage(); 
+          toast.success('Your form has been submitted!');
         }, (error) => {
           console.log('FAILED...', error);
+          toast.error('Failed to send the message. Please try again.');
         });
     } else {
       const errors = {};
@@ -163,16 +161,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      {showMessage && (
-        <div className="fixed inset-0 flex items-center justify-center bg-primary bg-opacity-50 z-50">
-          <div className="bg-primary border-4 border-accent p-6 rounded-lg shadow-lg">
-            <p className="text-xl">Your form has been submitted!</p>
-            <Button onClick={toggleMessage} className="mt-4">
-              Close
-            </Button>
-          </div>
-        </div>
-      )}
+      <ToastContainer />
     </motion.section>
   );
 };
