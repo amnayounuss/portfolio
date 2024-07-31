@@ -36,7 +36,7 @@ const projects = [
     ],
     "image": "/assets/work/ecube.jpg",
     "live": "https://ecube1.netlify.app/",
-    "github": ""
+    "github": "https://github.com/amnayounuss/ERP"
   },
   {
     "category": "WordPress",
@@ -83,7 +83,7 @@ const projects = [
     ],
     "image": "/assets/work/desi-dhaba.jpg",
     "live": "https://desi-dhaba.vercel.app/?category=all",
-    "github": ""
+    "github": "https://github.com/amnayounuss/desi_dhaba"
   },
   {
     "category": "fullstack",
@@ -98,7 +98,7 @@ const projects = [
     ],
     "image": "/assets/work/flikrinnovation.jpg",
     "live": "https://flikrinnovation.com/#/",
-    "github": ""
+    "github": "https://github.com/amnayounuss/flikr_innovation"
   }
 ];
 
@@ -128,10 +128,10 @@ const Portfolio = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" }
       }}
-      className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
+      className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0 px-4 sm:px-6"
     >
       <div className="container mx-auto">
-        <div className="mb-8 flex gap-4">
+        <div className="mb-8 flex gap-4 flex-wrap justify-center">
           <button
             onClick={() => setActiveTab('all')}
             className={`px-4 py-2 rounded-lg ${activeTab === 'all' ? 'bg-accent text-white' : 'bg-gray-200 text-gray-800'}`}
@@ -158,10 +158,10 @@ const Portfolio = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
             <div key={index} className="relative group flex flex-col overflow-hidden rounded-lg bg-[#27272c]">
-              <div className="relative w-full h-[300px] overflow-hidden">
+              <div className="relative w-full h-60 sm:h-72 md:h-80 lg:h-[300px] overflow-hidden">
                 <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
                 <div className="relative w-full h-full transition-transform duration-500 transform group-hover:scale-110">
                   <Image
@@ -173,8 +173,8 @@ const Portfolio = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-2 p-6 overflow-auto">
-                <h2 className="text-2xl font-bold leading-none text-white capitalize">
+              <div className="flex flex-col gap-2 p-4 sm:p-6 overflow-auto">
+                <h2 className="text-xl sm:text-2xl font-bold leading-none text-white capitalize">
                   {project.title}
                 </h2>
                 <p className="text-white/60 text-sm">{project.description}</p>
@@ -186,13 +186,13 @@ const Portfolio = () => {
                     </li>
                   ))}
                 </ul>
-                <div className="border border-white/20"></div>
+                <div className="border border-white/20 my-2"></div>
                 <div className="flex items-center gap-4">
                   <Link href={project.live} target="_blank">
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
-                        <TooltipTrigger className="w-[50px] h-[50px] rounded-full bg-white/5 flex justify-center items-center group">
-                          <BsArrowUpRight className="text-white text-2xl group-hover:text-accent" />
+                        <TooltipTrigger className="w-12 h-12 rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsArrowUpRight className="text-white text-xl group-hover:text-accent" />
                         </TooltipTrigger>
                         <TooltipContent>
                           <p>Live Project</p>
@@ -203,8 +203,8 @@ const Portfolio = () => {
                   <Link href={project.github} target="_blank">
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
-                        <TooltipTrigger className="w-[50px] h-[50px] rounded-full bg-white/5 flex justify-center items-center group">
-                          <BsGithub className="text-white text-2xl group-hover:text-accent" />
+                        <TooltipTrigger className="w-12 h-12 rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsGithub className="text-white text-xl group-hover:text-accent" />
                         </TooltipTrigger>
                         <TooltipContent>
                           <p>Github repository</p>
@@ -222,13 +222,13 @@ const Portfolio = () => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Image Modal"
-        className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center"
+        className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center p-4"
         overlayClassName="fixed inset-0 bg-black bg-opacity-50"
       >
-        <div className="relative w-full max-w-4xl h-full max-h-[80vh]">
+        <div className="relative w-full max-w-4xl h-full max-h-[80vh] bg-white p-4 rounded-lg">
           <button
             onClick={closeModal}
-            className="absolute top-4 right-4 text-white text-2xl"
+            className="absolute top-4 right-4 text-black text-2xl"
           >
             &times;
           </button>
