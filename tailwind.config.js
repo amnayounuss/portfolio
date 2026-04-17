@@ -2,50 +2,43 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
+    './pages/**/*.{js,jsx,ts,tsx}',
+    './components/**/*.{js,jsx,ts,tsx}',
+    './app/**/*.{js,jsx,ts,tsx}',
+    './src/**/*.{js,jsx,ts,tsx}',
   ],
   prefix: "",
   theme: {
     container: {
       center: true,
-      padding: "15px",
-
-    },
-    screens: {
-      sm: "648px",
-      md: "768px",
-      lg: "960px",
-      xl: "1288px",
-    },
-    fontFamily: {
-      primary: "var(--font-jetbrainsMono)",
+      padding: "2rem",
     },
     extend: {
       colors: {
-        primary: '#1E1D2B', 
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        primary: "var(--primary)",
         accent: {
-          DEFAULT: '#8841C5',
-          hover: '#CB8AFE',
-          
-        }
-
+          DEFAULT: "var(--accent)",
+          hover: "var(--accent-hover)",
+        },
+        muted: {
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)',
+        },
+      },
+      fontFamily: {
+        display: ["var(--font-sora)", "sans-serif"],
+        body: ["var(--font-jakarta)", "sans-serif"],
       },
       keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+        "text-reveal": {
+          "0%": { transform: "translateY(100%) skewY(10deg)", opacity: 0 },
+          "100%": { transform: "translateY(0) skewY(0deg)", opacity: 1 },
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        "text-reveal": "text-reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards",
       },
     },
   },

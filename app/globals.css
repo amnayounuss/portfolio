@@ -2,27 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --background: #080808;
+  --foreground: #ffffff;
+  --primary: #080808;
+  --accent: #a855f7;
+  --accent-hover: #9333ea;
+}
+
 @layer base {
-  body {
-    @apply font-primary bg-primary text-white leading-loose;
-  }
-  .h1 {
-    @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
-  }
-  .h2 {
-    @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
-  }
-  .h3 {
-    @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
+  ::selection {
+    background: rgba(168, 85, 247, 0.4);
+    color: #fff;
   }
 
-  .text-outline{
-    -webkit-text-stroke: 1px #ffffff;
+  html {
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
   }
-  .text-outline-hover{
-    -webkit-text-stroke: 1px #8841C5;
+
+  body {
+    @apply bg-primary text-white font-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-primary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full transition-colors;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(168, 85, 247, 0.5);
+  }
+
+  .h1 {
+    @apply text-[clamp(1.8rem,5vw,4.5rem)] font-display font-black leading-[0.95] tracking-tight uppercase;
+  }
+
+  .h2 {
+    @apply text-[clamp(1.5rem,4vw,3.8rem)] font-display font-black leading-[0.95] tracking-tight uppercase;
+  }
+
+  .h3 {
+    @apply text-[clamp(1.4rem,4vw,3rem)] font-display font-bold leading-[1.1] tracking-tight uppercase;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+    color: transparent;
   }
 }
 
-
-
+@layer components {
+  .btn-editorial {
+    @apply px-8 py-4 border border-white/20 hover:border-accent hover:bg-accent hover:text-white transition-all duration-500 uppercase tracking-widest text-xs font-bold relative overflow-hidden;
+  }
+}
